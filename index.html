@@ -1,113 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selmi Iyed - CV</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Selmi Iyed - CV</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #111418;    
-      color: #d6dce5;          
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+<style>
+  /* Base */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f15;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-    header {
-      background: #1a1f25;
-      color: #d6dce5;
-      padding: 100px 20px;
-      text-align: center;
-      animation: fadeDown 1.2s ease;
-      border-bottom: 1px solid #3b82f6;   
-    }
+  a { text-decoration: none; color: #00c8b8; transition: 0.3s; }
+  a:hover { color: #36f0d0; }
 
-    header h1 {
-      margin: 0;
-      font-size: 46px;
-      letter-spacing: 1px;
-      color: #ffffff;
-    }
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #1a1f25, #101219);
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-    header p {
-      font-size: 18px;
-      max-width: 650px;
-      margin: 15px auto 0;
-      color: #c7cdd6;
-      opacity: 0.9;
-    }
+  header::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,200,184,0.1) 0%, transparent 70%);
+    top: -50%;
+    left: -50%;
+    animation: rotateGradient 25s linear infinite;
+    z-index: 0;
+  }
 
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 25px;
-      background: #1c1f27;     
-      border-radius: 12px;
-      border-left: 3px solid #3b82f6; 
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
+  @keyframes rotateGradient {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  header h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 46px;
+    letter-spacing: 1px;
+    margin: 0;
+    text-shadow: 0 0 3px #00c8b8;
+  }
 
-    h2 {
-      font-size: 24px;
-      color: #3b82f6;         
-      margin-bottom: 10px;
-    }
+  header p {
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    max-width: 650px;
+    margin: 15px auto 0;
+    color: #c7cdd6;
+    opacity: 0.9;
+  }
 
-    ul {
-      padding-left: 20px;
-      color: #e4e8ec;
-    }
+  /* Section */
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1a1e28;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,200,184,0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+    border-left: 4px solid #00c8b8;
+  }
 
-    li {
-      margin-bottom: 8px;
-    }
+  section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    a {
-      color: #3b82f6;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+  h2 {
+    font-size: 24px;
+    color: #00c8b8;
+    margin-bottom: 12px;
+  }
 
-    a:hover {
-      color: #60a5fa;
-    }
+  ul {
+    padding-left: 25px;
+    color: #d0d0d0;
+  }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      margin-top: 50px;
-      background: #1a1f25;
-      color: #6b7280;
-      font-size: 15px;
-    }
+  li {
+    margin-bottom: 10px;
+    position: relative;
+    transition: transform 0.2s, color 0.2s;
+  }
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  li::before {
+    content: '▹';
+    color: #00c8b8;
+    margin-right: 10px;
+  }
+
+  li:hover {
+    transform: translateX(5px);
+    color: #36f0d0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    background: #1a1f25;
+    color: #6b7280;
+    font-size: 15px;
+  }
+
+</style>
 </head>
 
 <body>
 <header>
   <h1>Selmi Mohamed Iyed</h1>
-  <p>Étudiant en Informatique, passionné par le génie logiciel, le cloud computing, la cybersécurité et les systèmes techniques. Toujours motivé à développer de nouvelles compétences et à créer des projets utiles.</p>
+  <p>Étudiant en Informatique, passionné par le développement logiciel, la cybersécurité et la robotique. Motivé à créer des projets innovants et à développer mes compétences techniques.</p>
 </header>
 
 <section>
   <h2>Éducation</h2>
   <ul>
-    <li><strong>2026 :</strong> Baccalauréat Informatique – Tunisie</li>
-    <li><strong>Objectif :</strong> Licence mention informatique puis Master spécialisé Cloud Engineering</li>
+    <li><strong>2025 – 2026 :</strong> Baccalauréat Informatique (en cours), Lycée Menzel Mhiri, Tunisie</li>
+    <li>Objectif : Licence Informatique en France</li>
   </ul>
 </section>
 
@@ -117,10 +145,9 @@
     <li>Python</li>
     <li>JavaScript</li>
     <li>HTML / CSS</li>
-    <li>SQL</li>
-    <li>Algorithmes et logique</li>
-    <li>Mathématiques</li>
+    <li>SQL (débutant)</li>
     <li>PHP (débutant)</li>
+    <li>Algorithmes et logique</li>
     <li>Cybersécurité (bases)</li>
   </ul>
 </section>
@@ -129,9 +156,18 @@
   <h2>Langues</h2>
   <ul>
     <li>Arabe (Natif)</li>
-    <li>Français (b2)</li>
-    <li>Anglais (Fluent)</li>
-    <li>Allemand (Débutant)</li>
+    <li>Français (TCF-DAP:C1)</li>
+    <li>Anglais </li>
+    <li>Allemand </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projets</h2>
+  <ul>
+    <li>Développement de <strong>petits sites web</strong> pour des projets scolaires</li>
+    <li>Création de <strong>scripts Python</strong> pour automatisation et résolution de problèmes</li>
+    <li>Projets en <strong>robotique</strong> : robot suiveur de ligne, robot multifonction imprimé en 3D</li>
   </ul>
 </section>
 
@@ -140,37 +176,15 @@
   <ul>
     <li>Robotique et impression 3D</li>
     <li>Circuits électroniques et microcontrôleurs</li>
-    <li>Cybersécurité </li>
+    <li>Cybersécurité et hacking éthique</li>
     <li>Programmation et développement web</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Projets</h2>
-  <ul>
-    <li><strong>BLE & WiFi Jammer :</strong> Projet éducatif explorant la communication sans-fil et le brouillage contrôlé.</li>
-
-    <li><strong>Smart Robot 3D — Robot multifonction :</strong>
-      <ul>
-        <li>Robot imprimé en 3D</li>
-        <li>Détection de ligne (capteurs IR)</li>
-        <li>Capteur ultrasonique</li>
-        <li>Contrôle via smartphone</li>
-        <li>Commandes vocales</li>
-      </ul>
-    </li>
-
-    <li><strong>Robot suiveur de ligne :</strong> Robot utilisant des capteurs infrarouges pour suivre un tracé automatiquement.</li>
-
-    <li><strong>Système d’allumage automatique :</strong> LED contrôlée via capteur LDR selon luminosité.</li>
-
-    <li><strong>Ventilation automatisée :</strong> Microcontrôleur activant un ventilateur selon la température.</li>
+    <li>Lecture et culture générale</li>
   </ul>
 </section>
 
 <section>
   <h2>Contact</h2>
-  <p>Email : <strong>iyed.selmi@gmail.com</strong></p>
+  <p>Email : <strong>6irobot9@gmail.com</strong></p>
 </section>
 
 <footer>
@@ -187,9 +201,11 @@
 
   sections.forEach(sec => observer.observe(sec));
 </script>
-
 </body>
 </html>
+
+
+
 
 
 
